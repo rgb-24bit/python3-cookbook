@@ -121,3 +121,21 @@
 可以查看 12.3 小节的例子演示是怎样做的。
 
 ``heapq`` 模块的官方文档有更详细的例子程序以及对于堆理论及其实现的详细说明。
+
+----------
+笔记
+----------
+
+如果优先队列中保存的对象是不可排序的，那么你需要保证 **元组** 前面的元素必然可以
+完成排序工作，否则会出错。
+
+代码示例：
+
+.. code-block:: python
+
+   >>> (2,2, object()) < (2, 2, object())
+   Traceback (most recent call last):
+     File "<stdin>", line 1, in <module>
+   TypeError: '<' not supported between instances of 'object' and 'object'
+
+示例代码中，元组的前两个元素相等导致不能完成排序工作，使得 **object** 参与排序， 导致错误。

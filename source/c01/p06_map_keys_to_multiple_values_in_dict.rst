@@ -79,3 +79,16 @@
         d[key].append(value)
 
 这一小节所讨论的问题跟数据处理中的记录归类问题有大的关联。可以参考 1.15 小节的例子。
+
+----------
+笔记
+----------
+
+``setdefault`` 是真的很别扭，按语义来说很想是 **设置默认值**, 而实际使用却是：
+
+.. code-block:: python
+
+   setdefault(...)
+       D.setdefault(k[,d]) -> D.get(k,d), also set D[k]=d if k not in D
+
+不符合直觉，差评。

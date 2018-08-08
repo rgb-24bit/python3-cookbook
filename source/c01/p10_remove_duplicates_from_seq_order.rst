@@ -80,3 +80,17 @@
 
 上述key函数参数模仿了 ``sorted()`` , ``min()`` 和 ``max()`` 等内置函数的相似功能。
 可以参考 1.8 和 1.13 小节了解更多。
+
+----------
+笔记
+----------
+
+.. code-block:: python
+
+    def dedupe(items, key=None):
+        seen = set()
+        for item in items:
+            val = item if key is None else key(item)
+            if val not in seen:
+                yield item
+                seen.add(val)
