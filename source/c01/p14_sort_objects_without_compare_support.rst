@@ -60,3 +60,9 @@
     >>> max(users, key=attrgetter('user_id'))
     User(99)
     >>>
+
+----------
+笔记
+----------
+
+https://docs.python.org/3/library/operator.html
