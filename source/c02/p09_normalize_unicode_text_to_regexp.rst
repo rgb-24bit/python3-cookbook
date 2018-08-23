@@ -95,3 +95,19 @@ Unicode显然是一个很大的主题。如果想更深入的了解关于标准�
 Ned Batchelder在 `他的网站 <http://nedbatchelder.com/text/unipain.html>`_
 上对Python的Unicode处理问题也有一个很好的介绍。
 
+----------
+笔记
+----------
+
+居然还有这种操作，虽然没遇到过，但是了解一下也好。
+
+还有就是内置函数 ``ascii``， 都快忘记这个函数的存在了， ``Python2`` 可以通过 ``decode``
+获得一个字符串的 ``unicode`` 编码，而 ``Python3`` 现在可以通过 ``ascii`` 获得。
+
+不知道有没有其他方式。
+
+发现还有一种方式是：
+
+.. code-block:: python
+
+   str.encode("unicode_escape")
