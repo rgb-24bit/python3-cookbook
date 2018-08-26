@@ -66,3 +66,10 @@
 .. _textwrap.TextWrapper文档:
     https://docs.python.org/3.6/library/textwrap.html#textwrap.TextWrapper
 
+----------
+笔记
+----------
+
+这一节的内容很棒，对于经常写点命令行小工具的我来说，这一节的内容实在是 ``Good !!!``
+
+使用 ``textwrap`` 折行，通过 ``os.get_terminal_size()`` 获取终端尺寸，真棒！

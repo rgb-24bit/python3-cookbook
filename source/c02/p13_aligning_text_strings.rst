@@ -96,3 +96,30 @@
 如果想要完全了解 ``format()`` 函数的有用特性，
 请参考 `在线Python文档 <https://docs.python.org/3/library/string.html#formatspec>`_
 
+----------
+笔记
+----------
+
+对于内置函数 ``format``, 大多数教程都是通过 ``str.format`` 的形式讲解的，很少单独使用 ``format``.
+
+``format`` 的参数为：
+
+.. code-block:: python
+
+   format(value, format_spec='', /)
+
+大致等价于：
+
+.. code-block:: python
+
+   '{:format_spec}'.format(value)
+
+比如说：
+
+.. code-bolck:: python
+
+   In [10]: '{:>20}'.format('text')
+   Out[10]: '                text'
+
+   In [11]: format('text', '>20')
+   Out[11]: '                text'
