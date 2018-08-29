@@ -76,3 +76,28 @@
 对于大多数使用到浮点的程序，没有必要也不推荐这样做。
 尽管在计算的时候会有一点点小的误差，但是这些小的误差是能被理解与容忍的。
 如果不能允许这样的小误差(比如涉及到金融领域)，那么就得考虑使用 ``decimal`` 模块了，下一节我们会详细讨论。
+
+----------
+笔记
+----------
+
+那么问题来了， ``round`` 是怎样实现的呢？
+
+乘十求余 ？
+
+.. code-block:: python
+
+   def my_round(value, ndigits):
+       value = int(value * (10 ** (ndigits + 1)))
+
+       last = value % 10
+       value = value // 10
+
+       if last >= 5:
+           value += 1
+
+       return value / (10 ** ndigits)
+
+这个实现不对。
+
+也许是这个 https://github.com/python/cpython/blob/master/Python/pymath.c#L68
