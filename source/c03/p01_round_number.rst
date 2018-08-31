@@ -100,4 +100,26 @@
 
 这个实现不对。
 
-也许是这个 https://github.com/python/cpython/blob/master/Python/pymath.c#L68
+找到等价 ``C`` 实现了： https://github.com/python/cpython/blob/master/Python/pymath.c
+
+.. code-block:: C
+
+   #include <math.h>
+
+   double copysign(double x, double y) {
+     if (y > 0. || (y == 0. && atan2(y, -1.) > 0.)) {
+       return fabs(x);
+     } else {
+       return -fabs(x);
+     }
+   }
+
+   double round(double x) {
+     double absx, y;
+     absx = fabs(x);
+     y = floor(absx);
+     if (absx - y >= 0.5) {
+       y += 1.0;
+     }
+     return copysign(y, x);
+   }
