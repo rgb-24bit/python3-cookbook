@@ -148,3 +148,8 @@
 `Generator Tricks for Systems Programmers <http://www.dabeaz.com/generators/>`_
 教程中对于这种技术有非常深入的讲解。可以参考这个教程获取更多的信息。
 
+----------
+笔记
+----------
+
+不知道特殊的大文件又该怎样处理
