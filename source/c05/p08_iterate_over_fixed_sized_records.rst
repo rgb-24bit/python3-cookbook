@@ -39,3 +39,34 @@
 如果是读取固定大小的记录，这通常是最普遍的情况。
 而对于文本文件，一行一行的读取(默认的迭代行为)更普遍点。
 
+----------
+笔记
+----------
+
+感觉可以弄一个上下文管理器：
+
+.. code-block:: python
+
+   from functools import partial
+
+   class Record(object):
+       def __init__(self, filename, mode, size, eof):
+           self.fp = open(filename, mode)
+           self.records = iter(partial(f.read, size), eof)
+
+       def __enter__(self):
+           return self.records
+
+       def __exit__(self, type, value, trace):
+           if trace is None:
+                self.fp.close()
+            else:
+                raise type(value)
+
+使用：
+
+.. code-block:: python
+
+   with Record('somefile.data', 'rb', 32, b'') as records:
+       for r in records:
+           ...
