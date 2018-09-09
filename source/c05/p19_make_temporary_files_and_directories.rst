@@ -127,5 +127,9 @@
 要注意的是不同的平台可能会不一样。因此你最好阅读
 `官方文档 <https://docs.python.org/3/library/tempfile.html>`_ 来了解更多的细节。
 
+----------
+笔记
+----------
 
-
+- https://docs.python.org/3/library/tempfile.html
+- https://github.com/python/cpython/blob/master/Lib/tempfile.py

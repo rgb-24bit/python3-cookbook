@@ -165,3 +165,11 @@
 最后一点要注意的是  ``pickle`` 有大量的配置选项和一些棘手的问题。
 对于最常见的使用场景，你不需要去担心这个，但是如果你要在一个重要的程序中使用pickle去做序列化的话，
 最好去查阅一下 `官方文档 <https://docs.python.org/3/library/pickle.html>`_ 。
+
+----------
+笔记
+----------
+
+更喜欢 ``Json``. 
+
+- https://docs.python.org/3/library/pickle.html
